@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QPRecordUploadViewController">
+            <connections>
+                <outlet property="bitRateTextField" destination="kKi-rZ-ll5" id="GN3-Ce-NUI"/>
+                <outlet property="heightTextField" destination="DCv-3x-wtQ" id="lQy-GV-Qxt"/>
+                <outlet property="maxDurationTextField" destination="4I8-rf-zDl" id="2UK-hg-u3I"/>
+                <outlet property="minDurationTextField" destination="isd-fW-Iwy" id="ZTc-wl-4Aa"/>
+                <outlet property="tableView" destination="MX7-Jw-vQl" id="jdi-UX-5bv"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="widthTextField" destination="S6D-MO-yI2" id="47a-Zf-sKs"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgY-Np-QA9">
+                    <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                    <color key="backgroundColor" red="0.77118844696969702" green="0.77118844696969702" blue="0.77118844696969702" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="n36-VF-SGl"/>
+                    </constraints>
+                    <state key="normal" title="录制"/>
+                    <connections>
+                        <action selector="efOnClickStartRecordVideo:" destination="-1" eventType="touchUpInside" id="zER-9f-5sD"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="APa-Wu-Tb5" userLabel="Panel">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="最小时长" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egx-16-2lA">
+                            <rect key="frame" x="8" y="8" width="100" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2" borderStyle="roundedRect" placeholder="时长" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="isd-fW-Iwy">
+                            <rect key="frame" x="128" y="8" width="100" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="最大时长" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njx-sS-PUS">
+                            <rect key="frame" x="9" y="41" width="100" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="30" borderStyle="roundedRect" placeholder="时长" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4I8-rf-zDl">
+                            <rect key="frame" x="129" y="41" width="100" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="码率" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ch6-dF-lwG">
+                            <rect key="frame" x="9" y="73" width="100" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="512" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S6D-MO-yI2">
+                            <rect key="frame" x="129" y="108" width="100" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="视频高" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLe-YL-utf">
+                            <rect key="frame" x="10" y="142" width="100" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="512" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DCv-3x-wtQ">
+                            <rect key="frame" x="130" y="142" width="100" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2000000" borderStyle="roundedRect" placeholder="码率" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kKi-rZ-ll5">
+                            <rect key="frame" x="129" y="73" width="100" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" 视频宽" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3S-rV-4xF">
+                            <rect key="frame" x="10" y="104" width="100" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyy-B6-cfY">
+                            <rect key="frame" x="261" y="84" width="90" height="30"/>
+                            <state key="normal" title="删除所有任务"/>
+                            <connections>
+                                <action selector="efOnClickDeleteAllRecords:" destination="-1" eventType="touchUpInside" id="KFG-OS-E0d"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="180" id="EKd-cR-z25"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MX7-Jw-vQl">
+                    <rect key="frame" x="0.0" y="180" width="375" height="427"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="qUb-uo-xzV"/>
+                        <outlet property="delegate" destination="-1" id="T8T-Wp-8G1"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="bgY-Np-QA9" secondAttribute="bottom" id="C4w-eq-OdV"/>
+                <constraint firstAttribute="trailing" secondItem="APa-Wu-Tb5" secondAttribute="trailing" id="INQ-am-f1D"/>
+                <constraint firstItem="APa-Wu-Tb5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="K87-Ms-m9v"/>
+                <constraint firstItem="bgY-Np-QA9" firstAttribute="top" secondItem="MX7-Jw-vQl" secondAttribute="bottom" id="LYE-6b-Jwm"/>
+                <constraint firstItem="APa-Wu-Tb5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="LhC-uS-cLb"/>
+                <constraint firstAttribute="trailing" secondItem="bgY-Np-QA9" secondAttribute="trailing" id="iSp-3T-bXm"/>
+                <constraint firstItem="MX7-Jw-vQl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="kRZ-Tb-S4W"/>
+                <constraint firstAttribute="trailing" secondItem="MX7-Jw-vQl" secondAttribute="trailing" id="kz9-ED-FfU"/>
+                <constraint firstItem="bgY-Np-QA9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="pDU-Ed-av1"/>
+                <constraint firstItem="MX7-Jw-vQl" firstAttribute="top" secondItem="APa-Wu-Tb5" secondAttribute="bottom" id="rfa-N6-DSm"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="ZiX-Ui-qu7" appends="YES" id="Go0-SZ-Fou"/>
+            </connections>
+            <point key="canvasLocation" x="480.5" y="384.5"/>
+        </view>
+        <tapGestureRecognizer id="ZiX-Ui-qu7">
+            <connections>
+                <action selector="tapGesture:" destination="-1" id="hkV-hh-Ezg"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>

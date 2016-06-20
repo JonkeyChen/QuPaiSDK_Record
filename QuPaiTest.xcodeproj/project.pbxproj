@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		89655C701D13C0C300BD1AD5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89655C6F1D13C0C300BD1AD5 /* main.m */; };
+		89655C731D13C0C300BD1AD5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89655C721D13C0C300BD1AD5 /* AppDelegate.m */; };
+		89655C761D13C0C300BD1AD5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89655C751D13C0C300BD1AD5 /* ViewController.m */; };
+		89655C791D13C0C300BD1AD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89655C771D13C0C300BD1AD5 /* Main.storyboard */; };
+		89655C7B1D13C0C300BD1AD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89655C7A1D13C0C300BD1AD5 /* Assets.xcassets */; };
+		89655C7E1D13C0C300BD1AD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89655C7C1D13C0C300BD1AD5 /* LaunchScreen.storyboard */; };
+		89655C891D13C17500BD1AD5 /* RecordVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89655C871D13C17500BD1AD5 /* RecordVideoViewController.m */; };
+		89655C8A1D13C17500BD1AD5 /* RecordVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89655C881D13C17500BD1AD5 /* RecordVideoViewController.xib */; };
+		89655CB61D13CB0400BD1AD5 /* UpLoadFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89655CB41D13CB0400BD1AD5 /* UpLoadFileViewController.m */; };
+		89655CB71D13CB0400BD1AD5 /* UpLoadFileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89655CB51D13CB0400BD1AD5 /* UpLoadFileViewController.xib */; };
+		89655CBF1D13D08000BD1AD5 /* QPRecordUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89655CBA1D13D08000BD1AD5 /* QPRecordUploadViewController.m */; };
+		89655CC01D13D08000BD1AD5 /* QPRecordUploadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89655CBB1D13D08000BD1AD5 /* QPRecordUploadViewController.xib */; };
+		89655CC11D13D08000BD1AD5 /* QPUploadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89655CBD1D13D08000BD1AD5 /* QPUploadTableViewCell.m */; };
+		89655CC21D13D08000BD1AD5 /* QPUploadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89655CBE1D13D08000BD1AD5 /* QPUploadTableViewCell.xib */; };
+		89AD8BF71D17F1B100DB1449 /* audio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89AD8BF01D17F1B100DB1449 /* audio.mp3 */; };
+		89AD8BF81D17F1B100DB1449 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 89AD8BF11D17F1B100DB1449 /* icon.png */; };
+		89AD8BF91D17F1B100DB1449 /* music1.json in Resources */ = {isa = PBXBuildFile; fileRef = 89AD8BF21D17F1B100DB1449 /* music1.json */; };
+		89AD8BFA1D17F1B100DB1449 /* music2.json in Resources */ = {isa = PBXBuildFile; fileRef = 89AD8BF31D17F1B100DB1449 /* music2.json */; };
+		89AD8BFB1D17F1B100DB1449 /* QPSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 89AD8BF41D17F1B100DB1449 /* QPSDK.bundle */; };
+		89AD8BFC1D17F1B100DB1449 /* QPSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89AD8BF51D17F1B100DB1449 /* QPSDK.framework */; };
+		89AD8BFD1D17F1B100DB1449 /* watermask.png in Resources */ = {isa = PBXBuildFile; fileRef = 89AD8BF61D17F1B100DB1449 /* watermask.png */; };
+		89B5B9BD1D13E7D500F123AE /* NSString+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B5B9BA1D13E7D500F123AE /* NSString+Utility.m */; };
+		89B5B9BE1D13E7D500F123AE /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B5B9BC1D13E7D500F123AE /* UIView+Toast.m */; };
+		89B5B9C01D13F11000F123AE /* 趣拍SDK记录.txt in Resources */ = {isa = PBXBuildFile; fileRef = 89B5B9BF1D13F11000F123AE /* 趣拍SDK记录.txt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		89655C6B1D13C0C300BD1AD5 /* QuPaiTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuPaiTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		89655C6F1D13C0C300BD1AD5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		89655C711D13C0C300BD1AD5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		89655C721D13C0C300BD1AD5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		89655C741D13C0C300BD1AD5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		89655C751D13C0C300BD1AD5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		89655C781D13C0C300BD1AD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		89655C7A1D13C0C300BD1AD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		89655C7D1D13C0C300BD1AD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		89655C7F1D13C0C300BD1AD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89655C861D13C17500BD1AD5 /* RecordVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordVideoViewController.h; sourceTree = "<group>"; };
+		89655C871D13C17500BD1AD5 /* RecordVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordVideoViewController.m; sourceTree = "<group>"; };
+		89655C881D13C17500BD1AD5 /* RecordVideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordVideoViewController.xib; sourceTree = "<group>"; };
+		89655CB31D13CB0400BD1AD5 /* UpLoadFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpLoadFileViewController.h; sourceTree = "<group>"; };
+		89655CB41D13CB0400BD1AD5 /* UpLoadFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpLoadFileViewController.m; sourceTree = "<group>"; };
+		89655CB51D13CB0400BD1AD5 /* UpLoadFileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpLoadFileViewController.xib; sourceTree = "<group>"; };
+		89655CB91D13D08000BD1AD5 /* QPRecordUploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPRecordUploadViewController.h; sourceTree = "<group>"; };
+		89655CBA1D13D08000BD1AD5 /* QPRecordUploadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QPRecordUploadViewController.m; sourceTree = "<group>"; };
+		89655CBB1D13D08000BD1AD5 /* QPRecordUploadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QPRecordUploadViewController.xib; sourceTree = "<group>"; };
+		89655CBC1D13D08000BD1AD5 /* QPUploadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPUploadTableViewCell.h; sourceTree = "<group>"; };
+		89655CBD1D13D08000BD1AD5 /* QPUploadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QPUploadTableViewCell.m; sourceTree = "<group>"; };
+		89655CBE1D13D08000BD1AD5 /* QPUploadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QPUploadTableViewCell.xib; sourceTree = "<group>"; };
+		89655CC31D13D43100BD1AD5 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		89AD8BF01D17F1B100DB1449 /* audio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio.mp3; sourceTree = "<group>"; };
+		89AD8BF11D17F1B100DB1449 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		89AD8BF21D17F1B100DB1449 /* music1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = music1.json; sourceTree = "<group>"; };
+		89AD8BF31D17F1B100DB1449 /* music2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = music2.json; sourceTree = "<group>"; };
+		89AD8BF41D17F1B100DB1449 /* QPSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = QPSDK.bundle; sourceTree = "<group>"; };
+		89AD8BF51D17F1B100DB1449 /* QPSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QPSDK.framework; sourceTree = "<group>"; };
+		89AD8BF61D17F1B100DB1449 /* watermask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watermask.png; sourceTree = "<group>"; };
+		89B5B9B91D13E7D500F123AE /* NSString+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utility.h"; sourceTree = "<group>"; };
+		89B5B9BA1D13E7D500F123AE /* NSString+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utility.m"; sourceTree = "<group>"; };
+		89B5B9BB1D13E7D500F123AE /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		89B5B9BC1D13E7D500F123AE /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		89B5B9BF1D13F11000F123AE /* 趣拍SDK记录.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "趣拍SDK记录.txt"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		89655C681D13C0C300BD1AD5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89AD8BFC1D17F1B100DB1449 /* QPSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		89655C621D13C0C300BD1AD5 = {
+			isa = PBXGroup;
+			children = (
+				89655C6D1D13C0C300BD1AD5 /* QuPaiTest */,
+				89655C6C1D13C0C300BD1AD5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		89655C6C1D13C0C300BD1AD5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				89655C6B1D13C0C300BD1AD5 /* QuPaiTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		89655C6D1D13C0C300BD1AD5 /* QuPaiTest */ = {
+			isa = PBXGroup;
+			children = (
+				89AD8BEC1D17F1B100DB1449 /* SDK */,
+				89B5B9B81D13E7D500F123AE /* Category */,
+				89655CB81D13D08000BD1AD5 /* QPRecordUploadViewController(列表) */,
+				89655CB21D13CAF000BD1AD5 /* UpLoadFileViewController(单个) */,
+				89655C851D13C17500BD1AD5 /* RecordVideoViewController（录制） */,
+				89655C711D13C0C300BD1AD5 /* AppDelegate.h */,
+				89655C721D13C0C300BD1AD5 /* AppDelegate.m */,
+				89655C741D13C0C300BD1AD5 /* ViewController.h */,
+				89655C751D13C0C300BD1AD5 /* ViewController.m */,
+				89655CC31D13D43100BD1AD5 /* Header.h */,
+				89B5B9BF1D13F11000F123AE /* 趣拍SDK记录.txt */,
+				89655C771D13C0C300BD1AD5 /* Main.storyboard */,
+				89655C7A1D13C0C300BD1AD5 /* Assets.xcassets */,
+				89655C7C1D13C0C300BD1AD5 /* LaunchScreen.storyboard */,
+				89655C7F1D13C0C300BD1AD5 /* Info.plist */,
+				89655C6E1D13C0C300BD1AD5 /* Supporting Files */,
+			);
+			path = QuPaiTest;
+			sourceTree = "<group>";
+		};
+		89655C6E1D13C0C300BD1AD5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				89655C6F1D13C0C300BD1AD5 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		89655C851D13C17500BD1AD5 /* RecordVideoViewController（录制） */ = {
+			isa = PBXGroup;
+			children = (
+				89655C861D13C17500BD1AD5 /* RecordVideoViewController.h */,
+				89655C871D13C17500BD1AD5 /* RecordVideoViewController.m */,
+				89655C881D13C17500BD1AD5 /* RecordVideoViewController.xib */,
+			);
+			name = "RecordVideoViewController（录制）";
+			path = RecordVideoViewController;
+			sourceTree = "<group>";
+		};
+		89655CB21D13CAF000BD1AD5 /* UpLoadFileViewController(单个) */ = {
+			isa = PBXGroup;
+			children = (
+				89655CB31D13CB0400BD1AD5 /* UpLoadFileViewController.h */,
+				89655CB41D13CB0400BD1AD5 /* UpLoadFileViewController.m */,
+				89655CB51D13CB0400BD1AD5 /* UpLoadFileViewController.xib */,
+			);
+			name = "UpLoadFileViewController(单个)";
+			path = UpLoadFileViewController;
+			sourceTree = "<group>";
+		};
+		89655CB81D13D08000BD1AD5 /* QPRecordUploadViewController(列表) */ = {
+			isa = PBXGroup;
+			children = (
+				89655CB91D13D08000BD1AD5 /* QPRecordUploadViewController.h */,
+				89655CBA1D13D08000BD1AD5 /* QPRecordUploadViewController.m */,
+				89655CBB1D13D08000BD1AD5 /* QPRecordUploadViewController.xib */,
+				89655CBC1D13D08000BD1AD5 /* QPUploadTableViewCell.h */,
+				89655CBD1D13D08000BD1AD5 /* QPUploadTableViewCell.m */,
+				89655CBE1D13D08000BD1AD5 /* QPUploadTableViewCell.xib */,
+			);
+			name = "QPRecordUploadViewController(列表)";
+			path = QPRecordUploadViewController;
+			sourceTree = "<group>";
+		};
+		89AD8BEC1D17F1B100DB1449 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				89AD8BED1D17F1B100DB1449 /* QuPaiSDK */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		89AD8BED1D17F1B100DB1449 /* QuPaiSDK */ = {
+			isa = PBXGroup;
+			children = (
+				89AD8BEE1D17F1B100DB1449 /* music */,
+				89AD8BF41D17F1B100DB1449 /* QPSDK.bundle */,
+				89AD8BF51D17F1B100DB1449 /* QPSDK.framework */,
+				89AD8BF61D17F1B100DB1449 /* watermask.png */,
+			);
+			path = QuPaiSDK;
+			sourceTree = "<group>";
+		};
+		89AD8BEE1D17F1B100DB1449 /* music */ = {
+			isa = PBXGroup;
+			children = (
+				89AD8BEF1D17F1B100DB1449 /* Athena */,
+				89AD8BF21D17F1B100DB1449 /* music1.json */,
+				89AD8BF31D17F1B100DB1449 /* music2.json */,
+			);
+			path = music;
+			sourceTree = "<group>";
+		};
+		89AD8BEF1D17F1B100DB1449 /* Athena */ = {
+			isa = PBXGroup;
+			children = (
+				89AD8BF01D17F1B100DB1449 /* audio.mp3 */,
+				89AD8BF11D17F1B100DB1449 /* icon.png */,
+			);
+			path = Athena;
+			sourceTree = "<group>";
+		};
+		89B5B9B81D13E7D500F123AE /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				89B5B9B91D13E7D500F123AE /* NSString+Utility.h */,
+				89B5B9BA1D13E7D500F123AE /* NSString+Utility.m */,
+				89B5B9BB1D13E7D500F123AE /* UIView+Toast.h */,
+				89B5B9BC1D13E7D500F123AE /* UIView+Toast.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		89655C6A1D13C0C300BD1AD5 /* QuPaiTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89655C821D13C0C300BD1AD5 /* Build configuration list for PBXNativeTarget "QuPaiTest" */;
+			buildPhases = (
+				89655C671D13C0C300BD1AD5 /* Sources */,
+				89655C681D13C0C300BD1AD5 /* Frameworks */,
+				89655C691D13C0C300BD1AD5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuPaiTest;
+			productName = QuPaiTest;
+			productReference = 89655C6B1D13C0C300BD1AD5 /* QuPaiTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		89655C631D13C0C300BD1AD5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = oneyd.me;
+				TargetAttributes = {
+					89655C6A1D13C0C300BD1AD5 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = ZYX3LYN6TF;
+					};
+				};
+			};
+			buildConfigurationList = 89655C661D13C0C300BD1AD5 /* Build configuration list for PBXProject "QuPaiTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 89655C621D13C0C300BD1AD5;
+			productRefGroup = 89655C6C1D13C0C300BD1AD5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				89655C6A1D13C0C300BD1AD5 /* QuPaiTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		89655C691D13C0C300BD1AD5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89655C7E1D13C0C300BD1AD5 /* LaunchScreen.storyboard in Resources */,
+				89AD8BFD1D17F1B100DB1449 /* watermask.png in Resources */,
+				89655C7B1D13C0C300BD1AD5 /* Assets.xcassets in Resources */,
+				89AD8BFA1D17F1B100DB1449 /* music2.json in Resources */,
+				89655CC01D13D08000BD1AD5 /* QPRecordUploadViewController.xib in Resources */,
+				89AD8BFB1D17F1B100DB1449 /* QPSDK.bundle in Resources */,
+				89655CB71D13CB0400BD1AD5 /* UpLoadFileViewController.xib in Resources */,
+				89AD8BF71D17F1B100DB1449 /* audio.mp3 in Resources */,
+				89655C791D13C0C300BD1AD5 /* Main.storyboard in Resources */,
+				89AD8BF81D17F1B100DB1449 /* icon.png in Resources */,
+				89655C8A1D13C17500BD1AD5 /* RecordVideoViewController.xib in Resources */,
+				89655CC21D13D08000BD1AD5 /* QPUploadTableViewCell.xib in Resources */,
+				89B5B9C01D13F11000F123AE /* 趣拍SDK记录.txt in Resources */,
+				89AD8BF91D17F1B100DB1449 /* music1.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		89655C671D13C0C300BD1AD5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89B5B9BE1D13E7D500F123AE /* UIView+Toast.m in Sources */,
+				89655C761D13C0C300BD1AD5 /* ViewController.m in Sources */,
+				89655C731D13C0C300BD1AD5 /* AppDelegate.m in Sources */,
+				89655CC11D13D08000BD1AD5 /* QPUploadTableViewCell.m in Sources */,
+				89655CB61D13CB0400BD1AD5 /* UpLoadFileViewController.m in Sources */,
+				89B5B9BD1D13E7D500F123AE /* NSString+Utility.m in Sources */,
+				89655C701D13C0C300BD1AD5 /* main.m in Sources */,
+				89655C891D13C17500BD1AD5 /* RecordVideoViewController.m in Sources */,
+				89655CBF1D13D08000BD1AD5 /* QPRecordUploadViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		89655C771D13C0C300BD1AD5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89655C781D13C0C300BD1AD5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		89655C7C1D13C0C300BD1AD5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89655C7D1D13C0C300BD1AD5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		89655C801D13C0C300BD1AD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		89655C811D13C0C300BD1AD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		89655C831D13C0C300BD1AD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/QuPaiTest/QuPaiSDK",
+					"$(PROJECT_DIR)/QuPaiTest/SDK/QuPaiSDK",
+				);
+				INFOPLIST_FILE = QuPaiTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "JonkeyChen-icloud.com";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		89655C841D13C0C300BD1AD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/QuPaiTest/QuPaiSDK",
+					"$(PROJECT_DIR)/QuPaiTest/SDK/QuPaiSDK",
+				);
+				INFOPLIST_FILE = QuPaiTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "JonkeyChen-icloud.com";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		89655C661D13C0C300BD1AD5 /* Build configuration list for PBXProject "QuPaiTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89655C801D13C0C300BD1AD5 /* Debug */,
+				89655C811D13C0C300BD1AD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89655C821D13C0C300BD1AD5 /* Build configuration list for PBXNativeTarget "QuPaiTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89655C831D13C0C300BD1AD5 /* Debug */,
+				89655C841D13C0C300BD1AD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 89655C631D13C0C300BD1AD5 /* Project object */;
+}

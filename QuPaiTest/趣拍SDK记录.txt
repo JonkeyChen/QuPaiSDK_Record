@@ -1,0 +1,39 @@
+
+
+1.下载SDK(http://faq.vcs.qupai.me/119.html) --> 将SDK拷贝到项目中
+2.Bulid Setting ->  Linking – Other Linker Flags -> 设置 -ObjC
+3.授权注册SDK  －》appdelegate中 导入#import <QPSDK/QPSDK.h>
+    [[QPAuth shared] registerAppWithKey:你的appkey secret:你的appSecret space:用户的uuid success:^(NSString *accessToken) {
+    NSLog(@"access token : %@", accessToken);
+    } failure:^(NSError *error) {
+    NSLog(@"failed : %@", error.description);
+    }];
+4.开始拍摄
+
+5.viewController中
+    - (IBAction)efOnClcikRecordVideo:(id)sender {
+
+        NSLog(@"拍摄视频");
+
+        RecordVideoViewController *recordVideoVC = [[RecordVideoViewController alloc]init];
+
+        [self.navigationController pushViewController:recordVideoVC animated:YES];
+    }
+
+    - (IBAction)efOnClcikUpLoadVedio:(id)sender {
+
+        NSLog(@"读取单个视频");
+
+        UpLoadFileViewController *readVideoFileVC = [[UpLoadFileViewController alloc]init];
+
+        [self.navigationController pushViewController:readVideoFileVC animated:YES];
+    }
+
+    - (IBAction)efOnClcikRecordsList:(id)sender {
+
+        NSLog(@"视频列表");
+
+        QPRecordUploadViewController *recordListVC = [[QPRecordUploadViewController alloc]init];
+
+        [self.navigationController pushViewController:recordListVC animated:YES];
+    }
