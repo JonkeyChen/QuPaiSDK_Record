@@ -1,0 +1,22 @@
+
+1.Enable Bitcode为NO
+
+2.修改Other Linker Flags， 添加-ObjC。
+
+3.引入依赖的系统库。
+    CoreFoundation.framework
+    libz.dylib
+    ImageIO.framework
+    CoreGraphics.framework
+    CFNetwork.framework
+    MobileCoreServices.framework
+    AssetsLibrary.framework
+    CoreData.framework
+    Security.framework
+    SystemConfiguration.framework
+    CoreTelephony.framework
+    CoreLocation.framework
+    UIKit.framework
+    Foundation.framework
+    CoreMotion.framework
+4.URL Type Scheme --》 indentifier(填写: tbopen23389263)

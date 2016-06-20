@@ -18,33 +18,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FzK-jK-EJA">
-                                <rect key="frame" x="197" y="488" width="158" height="62"/>
+                                <rect key="frame" x="9" y="294" width="346" height="62"/>
                                 <color key="backgroundColor" red="0.93875925159999996" green="0.29803921570000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="拍摄">
+                                <state key="normal" title="拍摄(趣拍视频)">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="efOnClcikRecordVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fJC-Wh-c77"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Flt-Ye-s71">
-                                <rect key="frame" x="9" y="488" width="158" height="62"/>
-                                <color key="backgroundColor" red="0.93875925159999996" green="0.29803921570000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="上传">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="efOnClcikUpLoadVedio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pwv-Wa-YEl"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijy-K3-Cqg">
                                 <rect key="frame" x="9" y="382" width="346" height="62"/>
                                 <color key="backgroundColor" red="0.93875925159999996" green="0.29803921570000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="列表">
+                                <state key="normal" title="上传(趣拍视频)">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="efOnClcikRecordsList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="da7-Wk-wQV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Flt-Ye-s71">
+                                <rect key="frame" x="9" y="464" width="346" height="62"/>
+                                <color key="backgroundColor" red="0.93875925159999996" green="0.29803921570000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="上传(阿里百川)">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="efOnClcikUpLoadVedio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pwv-Wa-YEl"/>
                                 </connections>
                             </button>
                         </subviews>
