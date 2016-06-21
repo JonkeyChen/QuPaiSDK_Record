@@ -11,6 +11,8 @@
 #import "UpLoadEntity.h"
 #import "PlayerVideoViewController.h"
 #import "RecordVideoViewController.h"
+#import "PlayerViewController.h"
+
 
 static NSString *const cellIndentifier = @"UpLoadViewCell";
 
@@ -296,9 +298,9 @@ static NSString *const cellIndentifier = @"UpLoadViewCell";
     
     if (data.url && [data.assetsUrl hasSuffix:@"mp4"]) {
         
-        PlayerVideoViewController *playerVC = [[PlayerVideoViewController alloc]init];
+        PlayerViewController *playerVC = [[PlayerViewController alloc]init];
         
-        playerVC.playerUrl = data.url;
+        playerVC.urlString = data.url;
         
         [self.navigationController pushViewController:playerVC animated:YES];
     } else if (data.url && [data.assetsUrl hasSuffix:@"JPG"]){

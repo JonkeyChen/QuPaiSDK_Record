@@ -14,12 +14,6 @@
 		89655C7B1D13C0C300BD1AD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89655C7A1D13C0C300BD1AD5 /* Assets.xcassets */; };
 		89655C7E1D13C0C300BD1AD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89655C7C1D13C0C300BD1AD5 /* LaunchScreen.storyboard */; };
 		89AD8C481D17F53F00DB1449 /* 阿里百川记录.txt in Resources */ = {isa = PBXBuildFile; fileRef = 89AD8BFE1D17F53F00DB1449 /* 阿里百川记录.txt */; };
-		89AD8C491D17F53F00DB1449 /* PlayerVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AD8C011D17F53F00DB1449 /* PlayerVideoViewController.m */; };
-		89AD8C4A1D17F53F00DB1449 /* PlayerVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89AD8C021D17F53F00DB1449 /* PlayerVideoViewController.xib */; };
-		89AD8C4B1D17F53F00DB1449 /* UpLoadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AD8C041D17F53F00DB1449 /* UpLoadCell.m */; };
-		89AD8C4C1D17F53F00DB1449 /* UpLoadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89AD8C051D17F53F00DB1449 /* UpLoadCell.xib */; };
-		89AD8C4D1D17F53F00DB1449 /* UpLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AD8C071D17F53F00DB1449 /* UpLoadViewController.m */; };
-		89AD8C4E1D17F53F00DB1449 /* UpLoadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89AD8C081D17F53F00DB1449 /* UpLoadViewController.xib */; };
 		89AD8C4F1D17F53F00DB1449 /* ALAssetRepresentation+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AD8C0B1D17F53F00DB1449 /* ALAssetRepresentation+extend.m */; };
 		89AD8C501D17F53F00DB1449 /* MyAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AD8C0E1D17F53F00DB1449 /* MyAlertView.m */; };
 		89AD8C511D17F53F00DB1449 /* NSString+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AD8C101D17F53F00DB1449 /* NSString+extend.m */; };
@@ -69,7 +63,15 @@
 		89AD8C901D17F65D00DB1449 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89AD8C8F1D17F65D00DB1449 /* ImageIO.framework */; };
 		89AD8C921D17F66700DB1449 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89AD8C911D17F66700DB1449 /* CoreFoundation.framework */; };
 		89B5B9C01D13F11000F123AE /* 趣拍SDK记录.txt in Resources */ = {isa = PBXBuildFile; fileRef = 89B5B9BF1D13F11000F123AE /* 趣拍SDK记录.txt */; };
-		89C9050A1D18D53400D4344B /* UpLoadEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C905091D18D53400D4344B /* UpLoadEntity.m */; };
+		89C905211D191F0000D4344B /* PlayerVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C905121D191F0000D4344B /* PlayerVideoViewController.m */; };
+		89C905221D191F0000D4344B /* PlayerVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C905131D191F0000D4344B /* PlayerVideoViewController.xib */; };
+		89C905231D191F0000D4344B /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C905151D191F0000D4344B /* PlayerViewController.m */; };
+		89C905241D191F0000D4344B /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C905161D191F0000D4344B /* PlayerViewController.xib */; };
+		89C905251D191F0000D4344B /* UpLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C905181D191F0000D4344B /* UpLoadViewController.m */; };
+		89C905261D191F0000D4344B /* UpLoadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C905191D191F0000D4344B /* UpLoadViewController.xib */; };
+		89C905271D191F0000D4344B /* UpLoadEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C9051C1D191F0000D4344B /* UpLoadEntity.m */; };
+		89C905281D191F0000D4344B /* UpLoadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C9051F1D191F0000D4344B /* UpLoadCell.m */; };
+		89C905291D191F0000D4344B /* UpLoadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C905201D191F0000D4344B /* UpLoadCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,15 +87,6 @@
 		89655C7F1D13C0C300BD1AD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89655CC31D13D43100BD1AD5 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		89AD8BFE1D17F53F00DB1449 /* 阿里百川记录.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "阿里百川记录.txt"; sourceTree = "<group>"; };
-		89AD8C001D17F53F00DB1449 /* PlayerVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerVideoViewController.h; sourceTree = "<group>"; };
-		89AD8C011D17F53F00DB1449 /* PlayerVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerVideoViewController.m; sourceTree = "<group>"; };
-		89AD8C021D17F53F00DB1449 /* PlayerVideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerVideoViewController.xib; sourceTree = "<group>"; };
-		89AD8C031D17F53F00DB1449 /* UpLoadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpLoadCell.h; sourceTree = "<group>"; };
-		89AD8C041D17F53F00DB1449 /* UpLoadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpLoadCell.m; sourceTree = "<group>"; };
-		89AD8C051D17F53F00DB1449 /* UpLoadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpLoadCell.xib; sourceTree = "<group>"; };
-		89AD8C061D17F53F00DB1449 /* UpLoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpLoadViewController.h; sourceTree = "<group>"; };
-		89AD8C071D17F53F00DB1449 /* UpLoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpLoadViewController.m; sourceTree = "<group>"; };
-		89AD8C081D17F53F00DB1449 /* UpLoadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpLoadViewController.xib; sourceTree = "<group>"; };
 		89AD8C0A1D17F53F00DB1449 /* ALAssetRepresentation+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAssetRepresentation+extend.h"; sourceTree = "<group>"; };
 		89AD8C0B1D17F53F00DB1449 /* ALAssetRepresentation+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAssetRepresentation+extend.m"; sourceTree = "<group>"; };
 		89AD8C0D1D17F53F00DB1449 /* MyAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAlertView.h; sourceTree = "<group>"; };
@@ -156,8 +149,20 @@
 		89AD8C8F1D17F65D00DB1449 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		89AD8C911D17F66700DB1449 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		89B5B9BF1D13F11000F123AE /* 趣拍SDK记录.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "趣拍SDK记录.txt"; sourceTree = "<group>"; };
-		89C905081D18D53400D4344B /* UpLoadEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpLoadEntity.h; sourceTree = "<group>"; };
-		89C905091D18D53400D4344B /* UpLoadEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpLoadEntity.m; sourceTree = "<group>"; };
+		89C905111D191F0000D4344B /* PlayerVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerVideoViewController.h; sourceTree = "<group>"; };
+		89C905121D191F0000D4344B /* PlayerVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerVideoViewController.m; sourceTree = "<group>"; };
+		89C905131D191F0000D4344B /* PlayerVideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerVideoViewController.xib; sourceTree = "<group>"; };
+		89C905141D191F0000D4344B /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
+		89C905151D191F0000D4344B /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
+		89C905161D191F0000D4344B /* PlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
+		89C905171D191F0000D4344B /* UpLoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpLoadViewController.h; sourceTree = "<group>"; };
+		89C905181D191F0000D4344B /* UpLoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpLoadViewController.m; sourceTree = "<group>"; };
+		89C905191D191F0000D4344B /* UpLoadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpLoadViewController.xib; sourceTree = "<group>"; };
+		89C9051B1D191F0000D4344B /* UpLoadEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpLoadEntity.h; sourceTree = "<group>"; };
+		89C9051C1D191F0000D4344B /* UpLoadEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpLoadEntity.m; sourceTree = "<group>"; };
+		89C9051E1D191F0000D4344B /* UpLoadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpLoadCell.h; sourceTree = "<group>"; };
+		89C9051F1D191F0000D4344B /* UpLoadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpLoadCell.m; sourceTree = "<group>"; };
+		89C905201D191F0000D4344B /* UpLoadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpLoadCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,17 +265,9 @@
 		89AD8BFF1D17F53F00DB1449 /* BaichuanClass */ = {
 			isa = PBXGroup;
 			children = (
-				89AD8C061D17F53F00DB1449 /* UpLoadViewController.h */,
-				89AD8C071D17F53F00DB1449 /* UpLoadViewController.m */,
-				89AD8C081D17F53F00DB1449 /* UpLoadViewController.xib */,
-				89AD8C031D17F53F00DB1449 /* UpLoadCell.h */,
-				89AD8C041D17F53F00DB1449 /* UpLoadCell.m */,
-				89AD8C051D17F53F00DB1449 /* UpLoadCell.xib */,
-				89C905081D18D53400D4344B /* UpLoadEntity.h */,
-				89C905091D18D53400D4344B /* UpLoadEntity.m */,
-				89AD8C001D17F53F00DB1449 /* PlayerVideoViewController.h */,
-				89AD8C011D17F53F00DB1449 /* PlayerVideoViewController.m */,
-				89AD8C021D17F53F00DB1449 /* PlayerVideoViewController.xib */,
+				89C905101D191F0000D4344B /* C */,
+				89C9051A1D191F0000D4344B /* M */,
+				89C9051D1D191F0000D4344B /* V */,
 			);
 			path = BaichuanClass;
 			sourceTree = "<group>";
@@ -422,6 +419,41 @@
 			path = Athena;
 			sourceTree = "<group>";
 		};
+		89C905101D191F0000D4344B /* C */ = {
+			isa = PBXGroup;
+			children = (
+				89C905171D191F0000D4344B /* UpLoadViewController.h */,
+				89C905181D191F0000D4344B /* UpLoadViewController.m */,
+				89C905191D191F0000D4344B /* UpLoadViewController.xib */,
+				89C905111D191F0000D4344B /* PlayerVideoViewController.h */,
+				89C905121D191F0000D4344B /* PlayerVideoViewController.m */,
+				89C905131D191F0000D4344B /* PlayerVideoViewController.xib */,
+				89C905141D191F0000D4344B /* PlayerViewController.h */,
+				89C905151D191F0000D4344B /* PlayerViewController.m */,
+				89C905161D191F0000D4344B /* PlayerViewController.xib */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		89C9051A1D191F0000D4344B /* M */ = {
+			isa = PBXGroup;
+			children = (
+				89C9051B1D191F0000D4344B /* UpLoadEntity.h */,
+				89C9051C1D191F0000D4344B /* UpLoadEntity.m */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		89C9051D1D191F0000D4344B /* V */ = {
+			isa = PBXGroup;
+			children = (
+				89C9051E1D191F0000D4344B /* UpLoadCell.h */,
+				89C9051F1D191F0000D4344B /* UpLoadCell.m */,
+				89C905201D191F0000D4344B /* UpLoadCell.xib */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -481,10 +513,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				89AD8C481D17F53F00DB1449 /* 阿里百川记录.txt in Resources */,
+				89C905261D191F0000D4344B /* UpLoadViewController.xib in Resources */,
 				89AD8C5F1D17F53F00DB1449 /* UpLoadFileViewController.xib in Resources */,
 				89AD8C6E1D17F53F00DB1449 /* music2.json in Resources */,
+				89C905241D191F0000D4344B /* PlayerViewController.xib in Resources */,
 				89AD8C711D17F53F00DB1449 /* watermask.png in Resources */,
-				89AD8C4A1D17F53F00DB1449 /* PlayerVideoViewController.xib in Resources */,
 				89655C7E1D13C0C300BD1AD5 /* LaunchScreen.storyboard in Resources */,
 				89AD8C6C1D17F53F00DB1449 /* icon.png in Resources */,
 				89AD8C6B1D17F53F00DB1449 /* audio.mp3 in Resources */,
@@ -494,12 +527,12 @@
 				89655C7B1D13C0C300BD1AD5 /* Assets.xcassets in Resources */,
 				89655C791D13C0C300BD1AD5 /* Main.storyboard in Resources */,
 				89AD8C5D1D17F53F00DB1449 /* RecordVideoViewController.xib in Resources */,
+				89C905221D191F0000D4344B /* PlayerVideoViewController.xib in Resources */,
 				89AD8C6D1D17F53F00DB1449 /* music1.json in Resources */,
-				89AD8C4E1D17F53F00DB1449 /* UpLoadViewController.xib in Resources */,
 				89B5B9C01D13F11000F123AE /* 趣拍SDK记录.txt in Resources */,
 				89AD8C6F1D17F53F00DB1449 /* QPSDK.bundle in Resources */,
 				89AD8C591D17F53F00DB1449 /* QPRecordUploadViewController.xib in Resources */,
-				89AD8C4C1D17F53F00DB1449 /* UpLoadCell.xib in Resources */,
+				89C905291D191F0000D4344B /* UpLoadCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,24 +544,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				89AD8C741D17F5BD00DB1449 /* NSURL+Extend.m in Sources */,
+				89C905251D191F0000D4344B /* UpLoadViewController.m in Sources */,
 				89AD8C511D17F53F00DB1449 /* NSString+extend.m in Sources */,
 				89AD8C4F1D17F53F00DB1449 /* ALAssetRepresentation+extend.m in Sources */,
+				89C905281D191F0000D4344B /* UpLoadCell.m in Sources */,
 				89AD8C571D17F53F00DB1449 /* UIView+Toast.m in Sources */,
 				89AD8C501D17F53F00DB1449 /* MyAlertView.m in Sources */,
 				89AD8C5C1D17F53F00DB1449 /* RecordVideoViewController.m in Sources */,
 				89655C761D13C0C300BD1AD5 /* ViewController.m in Sources */,
-				89AD8C4D1D17F53F00DB1449 /* UpLoadViewController.m in Sources */,
-				89C9050A1D18D53400D4344B /* UpLoadEntity.m in Sources */,
+				89C905271D191F0000D4344B /* UpLoadEntity.m in Sources */,
 				89AD8C551D17F53F00DB1449 /* UITableViewCell+FixUITableViewCellAutolayout.m in Sources */,
 				89AD8C5A1D17F53F00DB1449 /* QPUploadTableViewCell.m in Sources */,
-				89AD8C491D17F53F00DB1449 /* PlayerVideoViewController.m in Sources */,
+				89C905211D191F0000D4344B /* PlayerVideoViewController.m in Sources */,
+				89C905231D191F0000D4344B /* PlayerViewController.m in Sources */,
 				89655C731D13C0C300BD1AD5 /* AppDelegate.m in Sources */,
 				89655C701D13C0C300BD1AD5 /* main.m in Sources */,
 				89AD8C601D17F53F00DB1449 /* ALBBMedia.m in Sources */,
 				89AD8C5E1D17F53F00DB1449 /* UpLoadFileViewController.m in Sources */,
 				89AD8C581D17F53F00DB1449 /* QPRecordUploadViewController.m in Sources */,
 				89AD8C521D17F53F00DB1449 /* NSString+Utility.m in Sources */,
-				89AD8C4B1D17F53F00DB1449 /* UpLoadCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
