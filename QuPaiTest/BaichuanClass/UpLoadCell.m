@@ -12,24 +12,36 @@
 
 @interface UpLoadCell ()
 
-@property(nonatomic, weak) NSMutableDictionary *datasrc;
-@property(nonatomic, strong) NSMutableArray *uploadTimeCache;
+@property(nonatomic, weak  ) NSMutableDictionary *datasrc;
 
 @end
 
 @implementation UpLoadCell
 
+- (void)awakeFromNib {
+
+    [super awakeFromNib];
+    
+    _evimgeHeader.layer.masksToBounds = YES;
+    
+    _evimgeHeader.layer.cornerRadius = CGRectGetWidth(_evimgeHeader.frame)/2.0;
+}
+
 //配置显示数据
 - (void)setData:(NSMutableDictionary *)data {
     
     @synchronized (self) {
+        
         self.evimgeHeader.image = [data objectForKey:@"image"];
+
         self.evlblUpLoadInfo.text = [NSString stringWithFormat:@"%lu", (unsigned long) [[data objectForKey:@"sizeUploaded"] unsignedIntegerValue]];
+        
         self.evlblImageSize.text = [NSString stringWithFormat:@"%.3f KB", [[data objectForKey:@"size"] integerValue]/1024.0/1024];
         
         self.evlblImageName.text = [data objectForKey:@"filename"];
         
         unsigned long su = [[data objectForKey:@"sizeUploaded"] unsignedIntegerValue];
+
         int progress = [[_datasrc objectForKey:@"progress"] intValue];
         
         int status = [[data objectForKey:@"status"] intValue];
@@ -55,22 +67,30 @@
             default:
                 break;
         }
+        
         float screenWidth = [UIScreen mainScreen].bounds.size.width ;
+        
         if (su > 0) {
+            
             float length = screenWidth - [UIScreen mainScreen].bounds.size.width * progress / 100;
+            
             self.evProgressToRightProgress.constant = length;
         } else {
+            
             self.evProgressToRightProgress.constant = screenWidth;
         }
         
         
         if (status == 1) {
+            
             self.evbtnCancleUpLoad.hidden = NO;
         } else {
+            
             self.evbtnCancleUpLoad.hidden = YES;
         }
         
         self.evlblUpLoadInfo.text = [data objectForKey:@"url"];
+        
         _datasrc = data;
     }
 }
@@ -79,15 +99,18 @@
  * 对cell重新初始化
  */
 - (void)reInit {
-    [_datasrc setObject:@0 forKey:@"dTime"];
     
-    [_datasrc setObject:@0 forKey:@"timeUsed"];
+    [_datasrc setObject:@0  forKey:@"dTime"];
+    [_datasrc setObject:@0  forKey:@"timeUsed"];
     [_datasrc setObject:@"" forKey:@"url"];
-    [_datasrc setObject:@0 forKey:@"status"];
-    [_datasrc setObject:@0 forKey:@"sizeUploaded"];
+    [_datasrc setObject:@0  forKey:@"status"];
+    [_datasrc setObject:@0  forKey:@"sizeUploaded"];
+    
     double ts = [[NSDate new] timeIntervalSince1970];
     [_datasrc setValue:[NSNumber numberWithDouble:ts] forKey:@"timeStart"];
+    
     self.evProgressToRightProgress.constant = [UIScreen mainScreen].bounds.size.width;
+
     self.evlblImageName.text = @"";
     self.evlblStatus.text = @"未开始";
 }
@@ -101,23 +124,29 @@
     [self reInit];
     
     TFEUploadNotification *notification = [TFEUploadNotification notificationWithProgress:^(TFEUploadSession *session, NSUInteger progress) {
+        
         NSLog(@"%lu", (unsigned long) progress);
         
         [_datasrc setObject:[NSNumber numberWithInt:LoadStatusUploading] forKey:@"status"];
+        
         [_datasrc setObject:[NSNumber numberWithUnsignedLong:progress] forKey:@"progress"];
+        
         [_datasrc setObject:[NSNumber numberWithUnsignedLong:session.sizeUploaded] forKey:@"sizeUploaded"];
         
         [self responseDelegate:_datasrc withStatus:LoadStatusUploading];
     } success:^(TFEUploadSession *session, NSString *url) {
         
         [_datasrc setObject:[NSNumber numberWithInt:LoadStatusSuccess] forKey:@"status"];
+        
         [_datasrc setObject:session.responseUrl forKey:@"url"];
+        
         [_datasrc setObject:[NSNumber numberWithDouble:([[NSDate new] timeIntervalSince1970] - session.startTime) * 1000] forKey:@"timeUsed"];
         
         [self responseDelegate:_datasrc withStatus:LoadStatusSuccess];
     } failed:^(TFEUploadSession *session, NSError *error) {
         
         [_datasrc setObject:session.isCanceled ? @4 : @2 forKey:@"status"];
+        
         [_datasrc setObject:[NSNumber numberWithDouble:([[NSDate new] timeIntervalSince1970] - session.startTime) * 1000] forKey:@"timeUsed"];
         
         [self responseDelegate:_datasrc withStatus:LoadStatusFailed];
@@ -127,12 +156,15 @@
                                                 param:[NSURL URLWithString:[_datasrc objectForKey:@"assetsUrl"]]
                                          notification:notification];
     if (ID){
+        
         [_datasrc setObject:ID forKey:@"taskId"];
     }
 }
 
 - (void)responseDelegate:(NSMutableDictionary*)data withStatus:(LoadStatus)loadStatus{
+    
     if ([_delegate respondsToSelector:@selector(upLoadCell:withData:withLoadStatus:)]) {
+        
         [_delegate upLoadCell:self withData:data withLoadStatus:loadStatus];
     }
 }
@@ -314,9 +346,7 @@
 }
  */
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-}
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

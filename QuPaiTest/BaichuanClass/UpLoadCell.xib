@@ -50,7 +50,7 @@
                         <rect key="frame" x="266" y="114" width="104" height="30"/>
                         <color key="backgroundColor" red="0.93875925159999996" green="0.29803921570000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <state key="normal" title="播放">
+                        <state key="normal" title="打开">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                         <connections>

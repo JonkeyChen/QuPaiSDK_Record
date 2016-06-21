@@ -260,12 +260,12 @@
 				89AD8C061D17F53F00DB1449 /* UpLoadViewController.h */,
 				89AD8C071D17F53F00DB1449 /* UpLoadViewController.m */,
 				89AD8C081D17F53F00DB1449 /* UpLoadViewController.xib */,
-				89AD8C001D17F53F00DB1449 /* PlayerVideoViewController.h */,
-				89AD8C011D17F53F00DB1449 /* PlayerVideoViewController.m */,
-				89AD8C021D17F53F00DB1449 /* PlayerVideoViewController.xib */,
 				89AD8C031D17F53F00DB1449 /* UpLoadCell.h */,
 				89AD8C041D17F53F00DB1449 /* UpLoadCell.m */,
 				89AD8C051D17F53F00DB1449 /* UpLoadCell.xib */,
+				89AD8C001D17F53F00DB1449 /* PlayerVideoViewController.h */,
+				89AD8C011D17F53F00DB1449 /* PlayerVideoViewController.m */,
+				89AD8C021D17F53F00DB1449 /* PlayerVideoViewController.xib */,
 			);
 			path = BaichuanClass;
 			sourceTree = "<group>";

@@ -11,6 +11,8 @@
 @interface PlayerVideoViewController (){
 
     UIWebView *_evWebView;
+    
+    UIImageView *_evimgPicture;
 }
 
 @end
@@ -24,17 +26,46 @@
 }
 
 - (void)efConfigure {
-
-    _evWebView = ({
-        UIWebView *webView = [[UIWebView alloc]init];
-        webView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
-        [self.view addSubview:webView];
-        webView;
-    });
     
-    NSURL *url = [NSURL URLWithString:self.playerUrl];
+    if (_playerUrl) {
+        
+        _evWebView = ({
+            
+            UIWebView *webView = [[UIWebView alloc]init];
+            
+            webView.frame = CGRectMake(0,
+                                       0,
+                                       [UIScreen mainScreen].bounds.size.width,
+                                       [UIScreen mainScreen].bounds.size.height);
+            
+            [self.view addSubview:webView];
+            
+            webView;
+        });
+        
+        NSURL *url = [NSURL URLWithString:self.playerUrl];
+        
+        [_evWebView loadRequest:[NSURLRequest requestWithURL:url]];
+    } else if (_imageUrl) {
     
-    [_evWebView loadRequest:[NSURLRequest requestWithURL:url]];
+        _evimgPicture = ({
+            
+            UIImageView *etimgPicture = [[UIImageView alloc]init];
+        
+            etimgPicture.frame = CGRectMake(0,
+                                            0,
+                                            [UIScreen mainScreen].bounds.size.width,
+                                            [UIScreen mainScreen].bounds.size.height);
+            
+            [self.view addSubview:etimgPicture];
+            
+            etimgPicture;
+        });
+        
+        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:_imageUrl]];
+        
+        _evimgPicture.image = [UIImage imageWithData:imageData];
+    }
 }
 
 - (void)dealloc {

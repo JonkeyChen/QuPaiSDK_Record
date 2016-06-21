@@ -23,8 +23,14 @@ typedef void (^DeleteRow) (int row);
 @class UpLoadCell,UpLoadViewController;
 @protocol UpLoadCellDelegate <NSObject>
 
+/**
+ *  代理方法通知ViewController刷新cell
+ */
 - (void)upLoadCell:(UpLoadCell*)cell withData:(NSMutableDictionary*)data withLoadStatus:(LoadStatus)loadStatus;
 @optional
+/**
+ *  选中某个，进行跳转，播放/打开图片
+ */
 - (void)upLoadCell:(UpLoadCell*)cell withIndexPath:(NSInteger)indexPath withData:(NSMutableDictionary*)data;
 
 @end
@@ -38,17 +44,14 @@ typedef void (^DeleteRow) (int row);
 @property (nonatomic,weak) IBOutlet UILabel *evlblUpLoadInfo;
 
 @property (nonatomic,weak) IBOutlet UIButton *evbtnApiPicture;
-@property (nonatomic,weak) IBOutlet UIButton *evbtnApiData;
-@property (nonatomic,weak) IBOutlet UIButton *evbtnApiFile;
 @property (nonatomic,weak) IBOutlet UIButton *evbtnCancleUpLoad;
 
+/**背景上传进度条*/
 @property (nonatomic,weak) IBOutlet UIView *evProgressContent;
 @property (nonatomic,weak) IBOutlet NSLayoutConstraint *evProgressToRightProgress;
 
-@property (copy,   nonatomic) DeleteRow deleteRow;
 @property (assign, nonatomic) NSInteger row;
 @property (strong, nonatomic) NSMutableDictionary *data;
-
 @property (assign, nonatomic) id<UpLoadCellDelegate> delegate;
 
 @end

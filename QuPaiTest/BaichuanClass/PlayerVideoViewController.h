@@ -12,4 +12,6 @@
 
 @property (nonatomic,copy) NSString *playerUrl;
 
+@property (nonatomic,copy) NSString *imageUrl;
+
 @end
