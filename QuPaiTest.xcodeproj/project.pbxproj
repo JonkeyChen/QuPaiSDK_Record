@@ -69,6 +69,7 @@
 		89AD8C901D17F65D00DB1449 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89AD8C8F1D17F65D00DB1449 /* ImageIO.framework */; };
 		89AD8C921D17F66700DB1449 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89AD8C911D17F66700DB1449 /* CoreFoundation.framework */; };
 		89B5B9C01D13F11000F123AE /* 趣拍SDK记录.txt in Resources */ = {isa = PBXBuildFile; fileRef = 89B5B9BF1D13F11000F123AE /* 趣拍SDK记录.txt */; };
+		89C9050A1D18D53400D4344B /* UpLoadEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C905091D18D53400D4344B /* UpLoadEntity.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,6 +156,8 @@
 		89AD8C8F1D17F65D00DB1449 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		89AD8C911D17F66700DB1449 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		89B5B9BF1D13F11000F123AE /* 趣拍SDK记录.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "趣拍SDK记录.txt"; sourceTree = "<group>"; };
+		89C905081D18D53400D4344B /* UpLoadEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpLoadEntity.h; sourceTree = "<group>"; };
+		89C905091D18D53400D4344B /* UpLoadEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpLoadEntity.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +266,8 @@
 				89AD8C031D17F53F00DB1449 /* UpLoadCell.h */,
 				89AD8C041D17F53F00DB1449 /* UpLoadCell.m */,
 				89AD8C051D17F53F00DB1449 /* UpLoadCell.xib */,
+				89C905081D18D53400D4344B /* UpLoadEntity.h */,
+				89C905091D18D53400D4344B /* UpLoadEntity.m */,
 				89AD8C001D17F53F00DB1449 /* PlayerVideoViewController.h */,
 				89AD8C011D17F53F00DB1449 /* PlayerVideoViewController.m */,
 				89AD8C021D17F53F00DB1449 /* PlayerVideoViewController.xib */,
@@ -513,6 +518,7 @@
 				89AD8C5C1D17F53F00DB1449 /* RecordVideoViewController.m in Sources */,
 				89655C761D13C0C300BD1AD5 /* ViewController.m in Sources */,
 				89AD8C4D1D17F53F00DB1449 /* UpLoadViewController.m in Sources */,
+				89C9050A1D18D53400D4344B /* UpLoadEntity.m in Sources */,
 				89AD8C551D17F53F00DB1449 /* UITableViewCell+FixUITableViewCellAutolayout.m in Sources */,
 				89AD8C5A1D17F53F00DB1449 /* QPUploadTableViewCell.m in Sources */,
 				89AD8C491D17F53F00DB1449 /* PlayerVideoViewController.m in Sources */,

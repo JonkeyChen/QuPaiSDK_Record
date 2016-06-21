@@ -7,6 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ALBBSDK/ALBBSDK.h>
+#import <AssetsLibrary/AssetsLibrary.h>
+#import <MobileCoreServices/UTCoreTypes.h>
+#import "NSURL+Extend.h"
+#import "ALBBMedia.h"
 
 @interface UpLoadViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 

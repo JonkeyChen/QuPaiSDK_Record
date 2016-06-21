@@ -156,6 +156,8 @@
     if (_value) {
         
         _value(task);
+        
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 

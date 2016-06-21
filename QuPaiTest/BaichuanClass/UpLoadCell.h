@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ALBBMedia.h"
-
+#import "UpLoadEntity.h"
 
 typedef NS_ENUM(NSUInteger, LoadStatus) {
     LoadStatusReady = 0,
@@ -26,12 +26,12 @@ typedef void (^DeleteRow) (int row);
 /**
  *  代理方法通知ViewController刷新cell
  */
-- (void)upLoadCell:(UpLoadCell*)cell withData:(NSMutableDictionary*)data withLoadStatus:(LoadStatus)loadStatus;
+- (void)upLoadCell:(UpLoadCell*)cell withData:(UpLoadEntity*)data withLoadStatus:(LoadStatus)loadStatus;
 @optional
 /**
  *  选中某个，进行跳转，播放/打开图片
  */
-- (void)upLoadCell:(UpLoadCell*)cell withIndexPath:(NSInteger)indexPath withData:(NSMutableDictionary*)data;
+- (void)upLoadCell:(UpLoadCell*)cell withIndexPath:(NSInteger)indexPath withData:(UpLoadEntity*)data;
 
 @end
 
@@ -51,7 +51,7 @@ typedef void (^DeleteRow) (int row);
 @property (nonatomic,weak) IBOutlet NSLayoutConstraint *evProgressToRightProgress;
 
 @property (assign, nonatomic) NSInteger row;
-@property (strong, nonatomic) NSMutableDictionary *data;
+@property (strong, nonatomic) UpLoadEntity *data;
 @property (assign, nonatomic) id<UpLoadCellDelegate> delegate;
 
 @end

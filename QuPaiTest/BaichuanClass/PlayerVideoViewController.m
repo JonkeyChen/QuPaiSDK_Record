@@ -8,6 +8,15 @@
 
 #import "PlayerVideoViewController.h"
 
+// 照片原图路径
+#define KOriginalPhotoImagePath [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"OriginalPhotoImages"]
+
+// 视频URL路径
+#define KVideoUrlPath [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@VideoURL]
+
+// caches路径
+#define KCachesPath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+
 @interface PlayerVideoViewController (){
 
     UIWebView *_evWebView;

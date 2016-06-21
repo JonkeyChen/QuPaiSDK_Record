@@ -7,13 +7,10 @@
 //
 
 #import "UpLoadViewController.h"
-#import <AssetsLibrary/AssetsLibrary.h>
-#import <MobileCoreServices/UTCoreTypes.h>
-#import "NSURL+Extend.h"
-#import <ALBBSDK/ALBBSDK.h>
-#import "ALBBMedia.h"
 #import "UpLoadCell.h"
+#import "UpLoadEntity.h"
 #import "PlayerVideoViewController.h"
+#import "RecordVideoViewController.h"
 
 static NSString *const cellIndentifier = @"UpLoadViewCell";
 
@@ -23,9 +20,10 @@ static NSString *const cellIndentifier = @"UpLoadViewCell";
     
     UIImagePickerController *_picker;
     
-    NSMutableArray<NSMutableDictionary*> *_imagesArray;
+    NSMutableArray<UpLoadEntity*> *_imagesArray;
 }
 
+@property (nonatomic,strong) NSMutableArray *groupArrays;
 
 @end
 
@@ -39,7 +37,35 @@ static NSString *const cellIndentifier = @"UpLoadViewCell";
 
 //配置UI及数据
 - (void)efConfigure{
-
+    
+    _groupArrays = [NSMutableArray new];
+    
+    //录制Button
+    UIBarButtonItem*etRightItem = ({
+        
+        UIButton*rightButton = [[UIButton alloc]initWithFrame:CGRectMake(0,0,30,30)];
+        
+        rightButton.layer.masksToBounds = YES;
+        
+        rightButton.layer.borderColor = [UIColor orangeColor].CGColor;
+        
+        rightButton.layer.borderWidth = 3;
+        
+        [rightButton setTitle:@"录制" forState:UIControlStateNormal];
+        
+        [rightButton.titleLabel setFont:[UIFont systemFontOfSize:12]];
+        
+        [rightButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+        
+        [rightButton addTarget:self action:@selector(_efOnClcikRecord) forControlEvents:UIControlEventTouchUpInside];
+        
+        UIBarButtonItem*rightItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
+    
+        rightItem;
+    });
+    
+    self.navigationItem.rightBarButtonItem = etRightItem;
+    
     //
     _picker = ({
         
@@ -56,11 +82,96 @@ static NSString *const cellIndentifier = @"UpLoadViewCell";
         picker;
     });
     
+    _evtblImagesList.rowHeight = 120;
+    
     [_evtblImagesList registerNib:[UINib nibWithNibName:@"UpLoadCell"
                                                  bundle:nil]
            forCellReuseIdentifier:cellIndentifier];
     
     _imagesArray = [NSMutableArray new];
+}
+
+//录制视频
+- (void)_efOnClcikRecord{
+    
+#warning 打开之后，就可以录制了
+    
+    //RecordVideoViewController *recordVideoVC = [[RecordVideoViewController alloc]init];
+    
+    //[_imagesArray removeAllObjects];
+    
+    __weak UpLoadViewController *weakSelf = self;
+    
+    //recordVideoVC.value = ^(QPUploadTask *task) {
+        [weakSelf efGetLibraryAllVideo];
+    //};
+
+    //[self.navigationController pushViewController:recordVideoVC animated:YES];
+}
+
+//读取本地全部视频
+- (void)efGetLibraryAllVideo{
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        ALAssetsLibraryGroupsEnumerationResultsBlock listGroupBlock = ^(ALAssetsGroup *group, BOOL *stop) {
+            
+            if (group != nil) {
+            
+                [_groupArrays addObject:group];
+            } else {
+                
+                [_groupArrays enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                    
+                    [obj enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
+                        
+                        if ([result thumbnail] != nil) {
+                            
+                            if ([[result valueForProperty:ALAssetPropertyType] isEqualToString:ALAssetTypeVideo]){
+                            
+                                    NSURL *url = [[result defaultRepresentation] url];
+                                    
+                                    UpLoadEntity *upLoadEntity = [[UpLoadEntity alloc]init];
+                                    upLoadEntity.assetsUrl = url.absoluteString;
+                                    upLoadEntity.type = 0;
+                                    upLoadEntity.name = [self uuidString];
+                                    upLoadEntity.uploadedSize = 0;
+                                    upLoadEntity.size = 0;
+                                    upLoadEntity.status = 0;
+                                    
+                                    [_imagesArray addObject:upLoadEntity];
+                                    
+                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                    
+                                        [_evtblImagesList reloadData];
+                                    });
+                            }
+                        }
+                    }];
+                }];
+            }
+        };
+        
+        ALAssetsLibraryAccessFailureBlock failureBlock = ^(NSError *error){
+            
+            NSString *errorMessage = nil;
+            
+            switch ([error code]) {
+                case ALAssetsLibraryAccessUserDeniedError:
+                case ALAssetsLibraryAccessGloballyDeniedError:
+                    errorMessage = @"用户拒绝访问相册,请在<隐私>中开启";
+                    break;
+                    
+                default:
+                    errorMessage = @"Reason unknown";
+                    break;
+            }
+        };
+        
+        ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc]  init];
+        [assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupAll
+                                     usingBlock:listGroupBlock failureBlock:failureBlock];
+    });
 }
 
 /*********************************************************************/
@@ -79,8 +190,6 @@ static NSString *const cellIndentifier = @"UpLoadViewCell";
     
     NSString *mediaurl = localUrl.absoluteString;
     
-    NSLog(@" \n\n info = %@ \n\n %@",info,_imagesArray);
-    
     BOOL flag = YES;
     
     //判断是否添加过相同的视频／图片
@@ -95,18 +204,17 @@ static NSString *const cellIndentifier = @"UpLoadViewCell";
     }
     
     if (flag) {
-        [_imagesArray addObject:[@{@"assetsUrl" : mediaurl,
-                                  @"type" : @0,
-                                  @"name" : [self uuidString],
-                                  @"uploadedSize " : @0,
-                                  @"size" : @0,
-                                  @"status": @0
-                                  } mutableCopy]];
-    }
+        
+        UpLoadEntity *upLoadEntity = [[UpLoadEntity alloc]init];
+        upLoadEntity.assetsUrl = mediaurl;
+        upLoadEntity.type = 0;
+        upLoadEntity.name = [self uuidString];
+        upLoadEntity.uploadedSize = 0;
+        upLoadEntity.size = 0;
+        upLoadEntity.status = 0;
 
-    NSLog(@"\n\n imageArr = %@",_imagesArray);
-    
-    _evtblImagesList.rowHeight = 120;
+        [_imagesArray addObject:upLoadEntity];
+    }
     
     [_evtblImagesList reloadData];
 }
@@ -125,16 +233,15 @@ static NSString *const cellIndentifier = @"UpLoadViewCell";
     
     cell.delegate = self;
     
-    NSMutableDictionary *data = [_imagesArray objectAtIndex:indexPath.item];
+    UpLoadEntity *data = [_imagesArray objectAtIndex:indexPath.item];
     
     NSString *path;
     
-    if ([[data objectForKey:@"type"] integerValue] == 0) {
+    if (data.type == 0) {
         
-        path = [data objectForKey:@"assetsUrl"];
-        
-        if (![data objectForKey:@"image"]) {
-            
+        path = data.assetsUrl;
+
+        if (!data.image) {
             ALAssetsLibraryAssetForURLResultBlock resultblock = ^(ALAsset *myasset) {
                 
                 ALAssetRepresentation *rep = [myasset defaultRepresentation];
@@ -143,11 +250,11 @@ static NSString *const cellIndentifier = @"UpLoadViewCell";
                 
                 if (iref) {
                     
-                    [data setObject:[UIImage imageWithCGImage:iref] forKey:@"image"];
+                    data.image = [UIImage imageWithCGImage:iref];
                     
-                    [data setObject:[NSNumber numberWithLongLong:[rep size]] forKey:@"size"];
+                    data.size = [rep size];
                     
-                    [data setObject:rep.filename forKey:@"filename"];
+                    data.filename = rep.filename;
                     
                     [_evtblImagesList reloadData];
                 }
@@ -175,34 +282,30 @@ static NSString *const cellIndentifier = @"UpLoadViewCell";
 }
 
 #pragma  mark -UpLoadCellDelegate
-- (void)upLoadCell:(UpLoadCell *)cell withData:(NSMutableDictionary *)data withLoadStatus:(LoadStatus)loadStatus{
+- (void)upLoadCell:(UpLoadCell *)cell withData:(UpLoadEntity *)data withLoadStatus:(LoadStatus)loadStatus{
     
     dispatch_async(dispatch_get_main_queue(), ^{
         
-        NSLog(@"refresh......%@,%@",@(loadStatus),_imagesArray);
+        [_imagesArray replaceObjectAtIndex:cell.row withObject:data];
         
         [_evtblImagesList reloadData];
     });
 }
 
-- (void)upLoadCell:(UpLoadCell *)cell withIndexPath:(NSInteger)indexPath withData:(NSMutableDictionary *)data {
-
-    NSString *urlStr  = [NSString stringWithFormat:@"%@",[data objectForKey:@"url"]];
+- (void)upLoadCell:(UpLoadCell *)cell withIndexPath:(NSInteger)indexPath withData:(UpLoadEntity *)data {
     
-    NSString *assetUrl= [NSString stringWithFormat:@"%@",[data objectForKey:@"assetsUrl"]];
-    
-    if (urlStr && [assetUrl hasSuffix:@"mp4"]) {
+    if (data.url && [data.assetsUrl hasSuffix:@"mp4"]) {
         
         PlayerVideoViewController *playerVC = [[PlayerVideoViewController alloc]init];
         
-        playerVC.playerUrl = data[@"url"];
+        playerVC.playerUrl = data.url;
         
         [self.navigationController pushViewController:playerVC animated:YES];
-    } else if (urlStr && [assetUrl hasSuffix:@"JPG"]){
+    } else if (data.url && [data.assetsUrl hasSuffix:@"JPG"]){
         
         PlayerVideoViewController *playerVC = [[PlayerVideoViewController alloc]init];
         
-        playerVC.imageUrl = data[@"url"];
+        playerVC.imageUrl = data.url;
         
         [self.navigationController pushViewController:playerVC animated:YES];
     }
