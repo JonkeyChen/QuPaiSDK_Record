@@ -4,7 +4,7 @@
 2.修改Other Linker Flags， 添加-ObjC。
 
 3.引入依赖的系统库。
-    CoreFoundation.framework
+    CoreFoundation.framework (官方文档上缺少的库)
     libz.dylib
     ImageIO.framework
     CoreGraphics.framework
@@ -20,3 +20,13 @@
     Foundation.framework
     CoreMotion.framework
 4.URL Type Scheme --》 indentifier(填写: tbopen23389263)
+
+//阿里百川技术支持
+
+5.http://baichuan.taobao.com/doc2/detail.htm?spm=a3c0d.7629140.0.0.mookvQ&treeId=38&articleId=102766&docType=1
+  集成SDK
+  注意：按照这个文档，第二节，不然无法验证身份，必然无法集成
+
+6.“DEMO_NAMESPACE 这个参数，对应控制台里面的 “空间名”namespace”
+
+7.dir 对应控制台的文件夹名字（如：/PictureFiles)
