@@ -40,8 +40,6 @@ static NSString *const cellIndentifier = @"UpLoadViewCell";
 //配置UI及数据
 - (void)efConfigure{
     
-    _groupArrays = [NSMutableArray new];
-    
     //录制Button
     UIBarButtonItem*etRightItem = ({
         
@@ -91,6 +89,10 @@ static NSString *const cellIndentifier = @"UpLoadViewCell";
            forCellReuseIdentifier:cellIndentifier];
     
     _imagesArray = [NSMutableArray new];
+    
+    _groupArrays = [NSMutableArray new];
+
+    [self efGetLibraryAllVideo];
 }
 
 //录制视频
@@ -98,21 +100,22 @@ static NSString *const cellIndentifier = @"UpLoadViewCell";
     
 #warning 打开之后，就可以录制了
     
-    //RecordVideoViewController *recordVideoVC = [[RecordVideoViewController alloc]init];
-    
-    //[_imagesArray removeAllObjects];
+    RecordVideoViewController *recordVideoVC = [[RecordVideoViewController alloc]init];
     
     __weak UpLoadViewController *weakSelf = self;
     
-    //recordVideoVC.value = ^(QPUploadTask *task) {
+    recordVideoVC.value = ^(QPUploadTask *task) {
+        
         [weakSelf efGetLibraryAllVideo];
-    //};
+    };
 
-    //[self.navigationController pushViewController:recordVideoVC animated:YES];
+    [self.navigationController pushViewController:recordVideoVC animated:YES];
 }
 
 //读取本地全部视频
 - (void)efGetLibraryAllVideo{
+    
+    [_imagesArray removeAllObjects];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
@@ -124,9 +127,10 @@ static NSString *const cellIndentifier = @"UpLoadViewCell";
             } else {
                 
                 [_groupArrays enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                    
+
                     [obj enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
                         
+
                         if ([result thumbnail] != nil) {
                             
                             if ([[result valueForProperty:ALAssetPropertyType] isEqualToString:ALAssetTypeVideo]){
@@ -282,6 +286,26 @@ static NSString *const cellIndentifier = @"UpLoadViewCell";
     
     return cell;
 }
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return YES;
+}
+
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return UITableViewCellEditingStyleDelete;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UpLoadEntity *task = _imagesArray[indexPath.row];
+    
+    [[[ALBBMedia sharedInstance] taeFileEngine] cancelUploadByUniqueId:task.taskId];
+    
+    [_imagesArray removeObject:task];
+    
+    [_evtblImagesList reloadData];
+}
 
 #pragma  mark -UpLoadCellDelegate
 - (void)upLoadCell:(UpLoadCell *)cell withData:(UpLoadEntity *)data withLoadStatus:(LoadStatus)loadStatus{
@@ -296,14 +320,16 @@ static NSString *const cellIndentifier = @"UpLoadViewCell";
 
 - (void)upLoadCell:(UpLoadCell *)cell withIndexPath:(NSInteger)indexPath withData:(UpLoadEntity *)data {
     
-    if (data.url && [data.assetsUrl hasSuffix:@"mp4"]) {
+    if (data.url && ([data.assetsUrl hasSuffix:@"mp4"]||
+                     [data.assetsUrl hasSuffix:@"MOV"])) {
         
         PlayerViewController *playerVC = [[PlayerViewController alloc]init];
         
         playerVC.urlString = data.url;
         
         [self.navigationController pushViewController:playerVC animated:YES];
-    } else if (data.url && [data.assetsUrl hasSuffix:@"JPG"]){
+    } else if (data.url && ([data.assetsUrl hasSuffix:@"JPG"]||
+                            [data.assetsUrl hasSuffix:@"PNG"])){
         
         PlayerVideoViewController *playerVC = [[PlayerVideoViewController alloc]init];
         
@@ -311,6 +337,12 @@ static NSString *const cellIndentifier = @"UpLoadViewCell";
         
         [self.navigationController pushViewController:playerVC animated:YES];
     }
+}
+
+- (void)dealloc {
+    
+    //取消所有下载任务
+    [[[ALBBMedia sharedInstance] taeFileEngine] cancelAllUploads];
 }
 
 - (NSString *)uuidString {
